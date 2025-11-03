@@ -8,7 +8,7 @@ Track all concepts you've learned to maintain a clear record of your system desi
 
 **Started:** 2025-11-03
 **Current Week:** Week 1
-**Completion:** 1%
+**Completion:** 2%
 
 ---
 
@@ -20,7 +20,7 @@ Track all concepts you've learned to maintain a clear record of your system desi
 |---------|--------|----------------|------------------|-------|
 | Vertical Scalability | ✅ Mastered | 2025-11-03 | ★★★★★ | Coffee shop analogy - one super barista |
 | Horizontal Scalability | ✅ Mastered | 2025-11-03 | ★★★★★ | Multiple locations - preferred for web-scale |
-| Reliability vs Availability | ⬜ Not Started | | ☆☆☆☆☆ | |
+| Reliability vs Availability | ✅ Mastered | 2025-11-03 | ★★★★★ | ATM analogy - Rita vs Alex. Different features need different priorities |
 | Latency vs Throughput | ⬜ Not Started | | ☆☆☆☆☆ | |
 | Back-of-Envelope Calculations | ⬜ Not Started | | ☆☆☆☆☆ | |
 

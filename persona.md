@@ -1,32 +1,42 @@
 # Learning Persona Profile
 
+**Last Updated:** 2025-11-03 (Session 1)
+
 ## About Me
 
 ### Background
-- **Current Level:**
-- **Experience:**
-- **Prior Knowledge:**
+- **Current Level:** Beginner in System Design
+- **Experience:** Starting 16-week system design curriculum
+- **Prior Knowledge:** Understanding of basic programming concepts
 
 ### Learning Goals
-1.
-2.
-3.
+1. Master system design for interviews
+2. Understand how to build scalable systems
+3. Learn to make trade-off decisions in system architecture
 
 ---
 
-## Learning Style
+## Learning Style (Discovered Through Our Sessions)
 
 ### How I Learn Best
-- [ ] Visual learner (diagrams, charts, videos)
-- [ ] Hands-on learner (coding, building projects)
-- [ ] Reading/Writing (books, notes, documentation)
-- [ ] Auditory learner (videos, explanations, discussions)
-- [ ] Teaching others (explaining concepts)
+- [x] **Real-world analogies** (Coffee shop for scalability, ATM for reliability)
+- [x] **Interactive dialogue** (Question → Answer → Build on it)
+- [x] **Scenario-based learning** (Uber example, gaming example)
+- [x] **Challenging my reasoning** (Changed answer on Uber after discussion)
+- [ ] Visual learner (diagrams, charts, videos) - TBD
+- [ ] Hands-on learner (coding, building projects) - TBD
 
 ### Preferred Pace
-- [ ] Fast-paced (quick overview, dive deep later)
-- [ ] Moderate (balanced theory and practice)
-- [ ] Slow and thorough (master each concept before moving on)
+- [x] **Incremental building** - Start simple, add complexity gradually
+- [x] **Master before moving on** - Wants to fully understand each concept
+- [x] **Prefers depth over breadth** - Would rather understand trade-offs deeply
+
+### Teaching Style That Works
+- ✅ **Start with requirements/scenarios** before diving into solutions
+- ✅ **Use familiar analogies** (coffee shops, ATMs, online games)
+- ✅ **Ask questions to check understanding** rather than just explaining
+- ✅ **Challenge initial answers** to deepen thinking (e.g., Uber location scenario)
+- ✅ **Show real-world examples** after explaining concepts
 
 ### Learning Environment
 - **Best time to study:**
@@ -39,44 +49,41 @@
 
 ---
 
-## Strengths
+## Strengths (Observed)
 
 ### Technical Strengths
-- **What I'm good at:**
-  1.
-  2.
-  3.
+- **Quick to grasp core concepts** (Understood vertical vs horizontal immediately)
+- **Good at connecting to real-world scenarios** (Gaming example, Uber payments)
+- **Can think through trade-offs** (Why 99.99% for gaming, not 99.9%)
+- **Willing to reconsider initial answers** (Changed mind on Uber location after reasoning)
 
-- **Concepts that come easily to me:**
-  -
-  -
-  -
-
-- **Skills I'm confident in:**
-  -
-  -
-  -
+### Concepts That Come Easily
+- **Scalability fundamentals** - Grasped vertical vs horizontal quickly
+- **Trade-off thinking** - Understood cost vs complexity in "nines" of availability
+- **Real-world application** - Good at mapping tech concepts to business needs
 
 ### Learning Strengths
-- **What helps me learn:**
-  -
-  -
-  -
+- **Articulates reasoning clearly** - Can explain "why" behind choices
+- **Engaged with questions** - Doesn't just want answers, wants to understand
+- **Builds on previous knowledge** - Connected reliability/availability to scalability discussions
+- **Comfortable being challenged** - Receptive to having thinking questioned
 
 ---
 
-## Areas for Improvement
+## Areas for Improvement (To Be Discovered)
 
 ### Technical Gaps
-- **Concepts I struggle with:**
-  1.
-  2.
-  3.
+Will update as we encounter challenges in:
+- Complex distributed systems concepts
+- Abstract algorithm design
+- Database internals
+- (TBD through future sessions)
 
-- **Topics that confuse me:**
-  -
-  -
-  -
+### Learning Patterns to Watch
+- How you handle very abstract concepts (CAP theorem next week)
+- Response to hands-on coding exercises
+- Retention over multiple sessions
+- Performance under mock interview pressure
 
 - **Skills I need to develop:**
   -
