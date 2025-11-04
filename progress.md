@@ -8,24 +8,24 @@ Track all concepts you've learned to maintain a clear record of your system desi
 
 **Started:** 2025-11-03
 **Current Week:** Week 1
-**Completion:** 2%
+**Completion:** 5%
 
 ---
 
 ## Part 1: Foundation (Weeks 1-4)
 
-### Week 1: Core Concepts & Scalability 🟡
+### Week 1: Core Concepts & Scalability ✅
 
 | Concept | Status | Date Completed | Confidence (1-5) | Notes |
 |---------|--------|----------------|------------------|-------|
 | Vertical Scalability | ✅ Mastered | 2025-11-03 | ★★★★★ | Coffee shop analogy - one super barista |
 | Horizontal Scalability | ✅ Mastered | 2025-11-03 | ★★★★★ | Multiple locations - preferred for web-scale |
 | Reliability vs Availability | ✅ Mastered | 2025-11-03 | ★★★★★ | ATM analogy - Rita vs Alex. Different features need different priorities |
-| Latency vs Throughput | ⬜ Not Started | | ☆☆☆☆☆ | |
-| Back-of-Envelope Calculations | ⬜ Not Started | | ☆☆☆☆☆ | |
+| Latency vs Throughput | ✅ Mastered | 2025-11-03 | ★★★★★ | Airplane analogy - private jet vs big plane. Gaming needs low latency |
+| Back-of-Envelope Calculations | ✅ Mastered | 2025-11-03 | ★★★★★ | 3 formulas: QPS, Storage, Bandwidth. Use 100k seconds/day |
 
-**Weekly Review Completed:** ⬜ Yes / ⬜ No
-**Practice Problems Done:** ___/___
+**Weekly Review Completed:** ✅ Yes (2025-11-03) - Perfect score on all questions!
+**Practice Problems Done:** 5/5
 
 ---
 
