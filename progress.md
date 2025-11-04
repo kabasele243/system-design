@@ -7,8 +7,8 @@ Track all concepts you've learned to maintain a clear record of your system desi
 ## Progress Overview
 
 **Started:** 2025-11-03
-**Current Week:** Week 1
-**Completion:** 5%
+**Current Week:** Week 2
+**Completion:** 10%
 
 ---
 
@@ -29,21 +29,21 @@ Track all concepts you've learned to maintain a clear record of your system desi
 
 ---
 
-### Week 2: Networking & APIs ⬜
+### Week 2: Networking & APIs ✅
 
 | Concept | Status | Date Completed | Confidence (1-5) | Notes |
 |---------|--------|----------------|------------------|-------|
-| DNS Resolution | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| L4 vs L7 Load Balancing | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Forward vs Reverse Proxy | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| REST API Design | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| HTTP Methods & Status Codes | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
+| DNS Resolution | ✅ Mastered | 2025-11-03 | ★★★★★ | 3-level hierarchy, multi-level caching, TTL. Cache = performance! |
+| L4 vs L7 Load Balancing | ✅ Mastered | 2025-11-03 | ★★★★★ | L4=fast/IP, L7=smart/HTTP. Health checks. Stateless+RoundRobin |
+| Forward vs Reverse Proxy | ✅ Mastered | 2025-11-03 | ★★★★★ | Forward=client-side/VPN, Reverse=server-side/NGINX. API Gateway! |
+| REST API Design | ✅ Mastered | 2025-11-03 | ★★★★★ | Resources+HTTP methods. Idempotency! Nested resources. Path vs Query |
+| HTTP Methods & Status Codes | ✅ Mastered | 2025-11-03 | ★★★★★ | 401 vs 403! 2xx/4xx/5xx. Safe vs Idempotent. CORS. Rate limiting |
 
 **Hands-on Practice:**
 - [ ] Implemented round-robin load balancer
 - [ ] Designed REST API for to-do app
 
-**Weekly Review Completed:** ⬜ Yes / ⬜ No
+**Weekly Review Completed:** ✅ Yes (2025-11-03) - Perfect score! Deep understanding of all concepts.
 
 ---
 
