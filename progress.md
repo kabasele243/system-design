@@ -7,8 +7,8 @@ Track all concepts you've learned to maintain a clear record of your system desi
 ## Progress Overview
 
 **Started:** 2025-11-03
-**Current Week:** Week 2
-**Completion:** 10%
+**Current Week:** Week 3
+**Completion:** 13%
 
 ---
 
@@ -47,20 +47,21 @@ Track all concepts you've learned to maintain a clear record of your system desi
 
 ---
 
-### Week 3: CAP Theorem & Consistency ⬜
+### Week 3: CAP Theorem & Consistency ✅
 
 | Concept | Status | Date Completed | Confidence (1-5) | Notes |
 |---------|--------|----------------|------------------|-------|
-| CAP Theorem | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| CP vs AP Systems | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Strong Consistency | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Eventual Consistency | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| ACID vs BASE | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
+| CAP Theorem | ✅ Mastered | 2025-11-05 | ★★★★★ | C+A+P pick 2, but P required! Bank branch analogy. Premature optimization! |
+| CP vs AP Systems | ✅ Mastered | 2025-11-05 | ★★★★★ | Configurable per-operation! MongoDB/Cassandra/DynamoDB examples |
+| Consistency Spectrum | ✅ Mastered | 2025-11-05 | ★★★★★ | Strong→Bounded→Session→Prefix→Eventual. Spotify use cases! |
+| ACID vs BASE | ✅ Mastered | 2025-11-05 | ★★★★★ | Atomicity/Isolation! Hybrid approach. Uber architecture example |
 
 **Practice:**
-- [ ] Classified 3 systems as CP or AP with justification
+- [x] Classified systems as CP or AP (Banking, Instagram, Uber, E-commerce, Spotify)
+- [x] Chose consistency levels (Strong, Bounded, Session, Eventual) for Spotify features
+- [x] Applied ACID vs BASE to ride-sharing app features
 
-**Weekly Review Completed:** ⬜ Yes / ⬜ No
+**Weekly Review Completed:** ✅ Yes (2025-11-05) - Perfect score! Excellent reasoning on all concepts.
 
 ---
 
