@@ -7,8 +7,8 @@ Track all concepts you've learned to maintain a clear record of your system desi
 ## Progress Overview
 
 **Started:** 2025-11-03
-**Current Week:** Week 3
-**Completion:** 13%
+**Current Week:** Week 5
+**Completion:** 17%
 
 ---
 
@@ -65,21 +65,24 @@ Track all concepts you've learned to maintain a clear record of your system desi
 
 ---
 
-### Week 4: Security Fundamentals ⬜
+### Week 4: Security Fundamentals ✅
 
 | Concept | Status | Date Completed | Confidence (1-5) | Notes |
 |---------|--------|----------------|------------------|-------|
-| Authentication vs Authorization | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| OAuth 2.0 & JWT | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| API Security | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Encryption (at rest/in transit) | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Rate Limiting | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
+| Authentication vs Authorization | ✅ Mastered | 2025-11-06 | ★★★★★ | Who vs What. MFA. RBAC vs ABAC. Coffee shop & Uber examples |
+| OAuth 2.0 & JWT | ✅ Mastered | 2025-11-06 | ★★★★★ | 4 players! Hotel key card analogy. Signature prevents tampering |
+| API Security | ✅ Mastered | 2025-11-06 | ★★★★★ | OWASP Top 10. SQL injection. Input validation. HTTPS enforcement |
+| Encryption (at rest/in transit) | ✅ Mastered | 2025-11-06 | ★★★★★ | Symmetric vs Asymmetric. bcrypt for passwords! Salting prevents rainbow tables |
+| Rate Limiting | ✅ Mastered | 2025-11-06 | ★★★★★ | 5 algorithms! Token Bucket=bursts. Sliding Window Counter=production |
 
-**Hands-on Practice:**
-- [ ] Designed authentication flow
-- [ ] Implemented rate limiter (token bucket)
+**Practice:**
+- [x] Designed healthcare security architecture (ABAC + OIDC + Multi-layer encryption + Audit logs)
+- [x] Debugged OAuth flow (Implicit vs Authorization Code)
+- [x] Compared password storage methods (plaintext vs SHA-256 vs bcrypt)
+- [x] Designed rate limiting for Spotify API (Token Bucket + Sliding Window Counter)
+- [x] Explained JWT tampering prevention (HMAC signature with secret key)
 
-**Weekly Review Completed:** ⬜ Yes / ⬜ No
+**Weekly Review Completed:** ✅ Yes (2025-11-06) - Outstanding! Production-grade security architecture thinking. 10/10 on most questions.
 
 ---
 
