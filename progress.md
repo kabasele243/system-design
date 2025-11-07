@@ -7,8 +7,8 @@ Track all concepts you've learned to maintain a clear record of your system desi
 ## Progress Overview
 
 **Started:** 2025-11-03
-**Current Week:** Week 5
-**Completion:** 17%
+**Current Week:** Week 6
+**Completion:** 21%
 
 ---
 
@@ -88,20 +88,23 @@ Track all concepts you've learned to maintain a clear record of your system desi
 
 ## Part 2: Building Blocks (Weeks 5-9)
 
-### Week 5: Databases ⬜
+### Week 5: Databases ✅
 
 | Concept | Status | Date Completed | Confidence (1-5) | Notes |
 |---------|--------|----------------|------------------|-------|
-| SQL vs NoSQL Trade-offs | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| B-tree Indexes | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Bloom Filters | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Database Schema Design | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
+| SQL vs NoSQL Trade-offs | ✅ Mastered | 2025-11-06 | ★★★★★ | Decision tree! 4 NoSQL types. Twitter example. Polyglot persistence |
+| B-tree Indexes | ✅ Mastered | 2025-11-06 | ★★★★★ | Composite indexes! Column order matters. Covering indexes. When NOT to index |
+| Bloom Filters | ✅ Mastered | 2025-11-06 | ★★★★★ | Space-efficient! No false negatives. Username checks. 859 MB for 500M items |
+| Database Schema Design | ✅ Mastered | 2025-11-06 | ★★★★★ | 1NF/2NF/3NF! Denormalization strategies. Hybrid approach. CDC pipeline |
 
-**Hands-on Practice:**
-- [ ] Implemented LRU cache
-- [ ] Designed e-commerce database schema
+**Practice:**
+- [x] Designed Twitter database architecture (MySQL + Cassandra + Redis - scored 9/10)
+- [x] Created composite indexes for YouTube queries (40/40 - perfect score!)
+- [x] Designed LinkedIn Bloom Filter with cost analysis (30/30 - perfect mathematics!)
+- [x] Normalized e-commerce schema to 3NF with CDC hybrid approach (30/30 - perfect!)
+- [x] Designed complete Uber database architecture (50/50 - masterpiece with Kafka, Redis GEO, S2 cells!)
 
-**Weekly Review Completed:** ⬜ Yes / ⬜ No
+**Weekly Review Completed:** ✅ Yes (2025-11-06) - EXCEPTIONAL! 198/200 (99%). Staff/Principal Engineer level thinking on all 5 questions.
 
 ---
 
