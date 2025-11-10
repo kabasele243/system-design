@@ -7,8 +7,8 @@ Track all concepts you've learned to maintain a clear record of your system desi
 ## Progress Overview
 
 **Started:** 2025-11-03
-**Current Week:** Week 8
-**Completion:** 29% (7 of 24 weeks)
+**Current Week:** Week 9
+**Completion:** 33% (8 of 24 weeks)
 
 ---
 
@@ -152,21 +152,23 @@ Track all concepts you've learned to maintain a clear record of your system desi
 
 ---
 
-### Week 8: Communication & Real-Time ⬜
+### Week 8: Communication & Real-Time ✅
 
 | Concept | Status | Date Completed | Confidence (1-5) | Notes |
 |---------|--------|----------------|------------------|-------|
-| REST vs gRPC | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| WebSockets | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Server-Sent Events | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| GraphQL | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| API Gateway | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
+| REST vs gRPC | ✅ Mastered | 2025-11-10 | ★★★★★ | REST for client-facing, gRPC for service-to-service. Protocol Buffers 70% smaller, 5-10x faster! |
+| WebSockets | ✅ Mastered | 2025-11-10 | ★★★★★ | Bidirectional real-time! Sticky sessions, Redis Pub/Sub for scaling. Heartbeat/ping-pong for reliability |
+| Server-Sent Events | ✅ Mastered | 2025-11-10 | ★★★★★ | One-way push, simpler than WebSockets. Auto-reconnect built-in! Event IDs for resuming |
+| GraphQL | ✅ Mastered | 2025-11-10 | ★★★★★ | Flexible querying! DataLoader solves N+1 problem. Normalized caching by TYPE+ID. Query complexity limits |
+| API Gateway | ✅ Mastered | 2025-11-10 | ★★★★★ | Single entry point! Routing, auth, rate limiting (Redis). BFF pattern for client-specific gateways |
 
-**Hands-on Practice:**
-- [ ] Designed real-time notification system
-- [ ] Implemented WebSocket server
+**Comprehensive notes created:**
+- All 5 topic files completed with practice questions and real-world examples
+- Weekly review with 5 detailed scenario-based questions (all answered)
+- Decision tree for protocol selection
+- Scaling patterns documented
 
-**Weekly Review Completed:** ⬜ Yes / ⬜ No
+**Weekly Review Completed:** ✅ Yes (2025-11-10) - Comprehensive review questions with detailed solutions for all 5 topics
 
 ---
 
