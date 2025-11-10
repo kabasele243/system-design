@@ -7,8 +7,8 @@ Track all concepts you've learned to maintain a clear record of your system desi
 ## Progress Overview
 
 **Started:** 2025-11-03
-**Current Week:** Week 6
-**Completion:** 21%
+**Current Week:** Week 8
+**Completion:** 29% (7 of 24 weeks)
 
 ---
 
@@ -108,38 +108,47 @@ Track all concepts you've learned to maintain a clear record of your system desi
 
 ---
 
-### Week 6: Scaling & Caching ⬜
+### Week 6: Scaling & Caching ✅
 
 | Concept | Status | Date Completed | Confidence (1-5) | Notes |
 |---------|--------|----------------|------------------|-------|
-| Primary-Secondary Replication | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Database Sharding | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Consistent Hashing | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Cache Eviction Policies | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Cache Strategies | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
+| Primary-Secondary Replication | ✅ Learned | 2025-11-09 | ★★★☆☆ | Async vs sync, read-your-writes pattern, Twitter example (62%) |
+| Database Sharding | ✅ Learned | 2025-11-09 | ★★★★☆ | user_id sharding, Netflix example, understood difference from replication! |
+| Consistent Hashing | ✅ Learned | 2025-11-09 | ★★★★★ | Mathematical precision! 80% vs 20% movement, virtual nodes (92%) |
+| Cache Eviction Policies | ✅ Learned | 2025-11-09 | ★★★★☆ | LRU vs LFU trade-offs, YouTube segmented cache (65%) |
+| Cache Strategies | ✅ Learned | 2025-11-09 | ★★★★★ | PERFECT! Cache-aside, write-through, write-behind, Twitter example (100%) |
 
-**Hands-on Practice:**
-- [ ] Implemented consistent hashing
-- [ ] Designed caching strategy for product catalog
+**Practice:**
+- [x] Designed Twitter replication (async + read-your-writes)
+- [x] Designed Netflix sharding (user_id, 16-20 shards)
+- [x] Analyzed Redis consistent hashing (92% - excellent math!)
+- [x] Designed Twitter cache strategies (100% - flawless!)
 
-**Weekly Review Completed:** ⬜ Yes / ⬜ No
+**Weekly Review Completed:** ✅ Yes (2025-11-09) - Good conceptual understanding (40%). Needs more depth on calculations and implementation details for next review.
 
 ---
 
-### Week 7: Asynchronous Systems ⬜
+### Week 7: Asynchronous Systems ✅
 
 | Concept | Status | Date Completed | Confidence (1-5) | Notes |
 |---------|--------|----------------|------------------|-------|
-| Message Queues | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Pub/Sub Model | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Kafka vs Traditional Queue | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| Event-Driven Architecture | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
-| CQRS Pattern | ⬜ / 🟡 / ✅ | | ☆☆☆☆☆ | |
+| Message Queues | ✅ Mastered | 2025-11-10 | ★★★★★ | SQS at-least-once delivery, visibility timeout, DLQ, idempotency! Multiple consumers = work distribution |
+| Pub/Sub Model | ✅ Mastered | 2025-11-10 | ★★★★★ | SNS fan-out pattern! One publisher → multiple different subscribers. SNS vs SQS vs EventBridge comparison |
+| Kafka vs Traditional Queue | ✅ Mastered | 2025-11-10 | ★★★★★ | Event streaming! Offset-based replay, partition keys for ordering, consumer groups. Staff Engineer level (97.5%) |
+| Event-Driven Architecture | ✅ Mastered | 2025-11-10 | ★★★★★ | PERFECT! Choreography vs orchestration, compensation transactions, past-tense events. Food delivery 40/40! |
+| CQRS Pattern | ✅ Learned | 2025-11-10 | ★★★★☆ | Write model (normalized) + Read model (denormalized). Redis feeds, Elasticsearch search. Needs more implementation practice |
 
 **Practice:**
-- [ ] Designed order processing system with queues
+- [x] Designed trading platform with Kafka (97.5% - 39/40)
+- [x] Designed food delivery event-driven flow (100% - 40/40)
+- [x] Designed social media CQRS (60% - 24/40, good concepts but needed implementation details)
 
-**Weekly Review Completed:** ⬜ Yes / ⬜ No
+**Weekly Review Completed:** ✅ Yes (2025-11-10) - EXCEPTIONAL! 200/200 (100%) 🏆
+- Netflix video processing (40/40) - SNS+SQS fan-out, auto-scaling, idempotency
+- Real-time chat (40/40) - Kafka+WebSocket parallel write, perfect architecture!
+- E-commerce saga (40/40) - Orchestration with Step Functions, compensating transactions
+- Kafka analytics (40/40) - Consumer groups, offset management, replay capability
+- Instagram CQRS (40/40) - Write/read model separation, Redis feeds, eventual consistency
 
 ---
 
