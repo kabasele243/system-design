@@ -19,20 +19,25 @@
 ### Core Components:
 
 1. **Post Service:**
-   - Handles creating, updating, deleting posts
-   - Publishes post events to message queue
+   - Handles creating, updating, deleting posts.
+   - Persists post data to the `Posts` database.
+   - Publishes "new_post" events to the Message Queue (Kafka) for async processing.
 
 2. **Feed Service:**
-   - Generates user's feed
-   - Reads from feed cache
+   - Generates and retrieves user's news feed.
+   - Reads from **Feed Cache** (Redis) for fast access (< 200ms).
+   - If cache miss (rare), queries DB and rebuilds feed (fallback).
 
 3. **Feed Worker:**
-   - Consumes post events from queue
-   - Updates followers' feed caches
+   - Consumes "new_post" events from the queue.
+   - **Fan-out Service**: Fetches followers of the author.
+   - **Privacy Service**: Checks if followers are allowed to see the post (ignored for this scale for simplicity).
+   - Updates followers' feed caches (push model).
 
 4. **Cache:**
-   - Stores pre-generated feeds
-   - Stores user social graph (followers/following)
+   - **Global Cache**: Stores metadata and user profiles.
+   - **Feed Cache (Redis)**: Stores the pre-computed feed for active users (e.g., list of Post IDs).
+   - **Social Graph Cache**: Caches "Following" lists to speed up fan-out.
 
 ## API Design
 

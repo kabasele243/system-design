@@ -29,15 +29,15 @@ Design a social media news feed like Twitter, Instagram, or Facebook
 
 **Write QPS (Posting):**
 ```
-500M users × 2 posts/day ÷ 86400 seconds =
-Peak write QPS (2x) =
+500M users × 2 posts/day ÷ 86400 seconds = ~11,500 posts/second
+Peak write QPS (2x) = ~23,000 posts/second
 ```
 
 **Read QPS (Feed Generation):**
 ```
 Assume each user checks feed 10 times/day
-500M users × 10 reads/day ÷ 86400 seconds =
-Peak read QPS =
+500M users × 10 reads/day ÷ 86400 seconds = ~58,000 requests/second
+Peak read QPS = ~116,000 requests/second
 ```
 
 **Storage:**
@@ -55,6 +55,7 @@ Daily storage: 1B × 100KB = 100TB/day
 **Fan-out Calculation:**
 ```
 1B posts/day × 200 followers = 200B feed updates/day
+~2.3 Million updates/second (This is the bottleneck!)
 ```
 
 ## Next Steps
