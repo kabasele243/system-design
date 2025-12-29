@@ -37,6 +37,15 @@
 - Optimized code and algorithms
 - Reduce network hops
 
+**AWS Services for Low Latency:**
+- **Amazon CloudFront:** CDN that caches content at edge locations worldwide (reduces latency by serving from nearest location)
+- **Amazon ElastiCache:** In-memory caching (Redis/Memcached) for sub-millisecond data access
+- **AWS Global Accelerator:** Routes traffic through AWS backbone network to reduce latency
+- **Amazon DynamoDB DAX:** In-memory cache for DynamoDB with microsecond response times
+- **EC2 Instance Types:** Compute-optimized (C7g) or memory-optimized (R7g) for faster processing
+- **Amazon Aurora Global Database:** Read replicas in multiple regions for < 1 second cross-region replication
+- **AWS Local Zones:** Deploy compute closer to end users in major cities
+
 ### Throughput (Volume Over Time)
 
 **Analogy:** One big airplane moving 1,000 people to LA in 6 hours - slower per person, but HUGE volume.
@@ -66,6 +75,16 @@
 - Efficient algorithms
 - Load balancing
 - Async/non-blocking operations
+
+**AWS Services for High Throughput:**
+- **Auto Scaling Groups:** Automatically add/remove EC2 instances based on demand
+- **Application Load Balancer (ALB):** Distributes traffic across multiple targets, handles millions of requests/sec
+- **Amazon Kinesis:** Process hundreds of terabytes of streaming data per hour
+- **AWS Lambda:** Concurrent execution of up to 1,000 functions simultaneously (can be increased)
+- **Amazon SQS:** Handle unlimited messages, process millions of messages per second
+- **AWS Batch:** Run hundreds of thousands of batch computing jobs
+- **Amazon EMR:** Process petabytes of data with Spark/Hadoop clusters
+- **Amazon S3:** 5,500 PUT/POST/DELETE and 5,500 GET requests per second per prefix
 
 ### The Trade-off
 
@@ -159,7 +178,68 @@
 - **Netflix:** Instant playback + 200M+ concurrent users
 - **Uber:** Real-time matching + millions of rides/day
 
+## AWS Architecture Examples
+
+### Example 1: Low Latency Gaming Backend
+```
+Architecture:
+- CloudFront → API Gateway → Lambda (us-east-1)
+- DynamoDB with DAX for player state
+- ElastiCache Redis for real-time matchmaking
+
+Why low latency?
+- CloudFront edge locations reduce geographic latency
+- DAX provides microsecond access to player data
+- Lambda cold starts mitigated with provisioned concurrency
+- Single region to avoid cross-region latency
+
+Trade-off: Limited to regional capacity (lower max throughput)
+```
+
+### Example 2: High Throughput Data Pipeline
+```
+Architecture:
+- S3 → Kinesis Data Streams → Lambda → S3/DynamoDB
+- Auto Scaling EMR cluster for batch processing
+- SQS queues for buffering
+
+Why high throughput?
+- Kinesis handles millions of events per second
+- Lambda scales to 1,000+ concurrent executions
+- EMR processes terabytes in parallel
+- SQS buffers unlimited messages
+
+Trade-off: Individual record processing may take seconds (higher latency)
+```
+
+### Example 3: Both Low Latency + High Throughput (Expensive!)
+```
+Architecture:
+- Route 53 → CloudFront (global) → ALB (multi-region) → Auto Scaling EC2
+- Aurora Global Database (multi-region)
+- ElastiCache clusters in each region
+- DynamoDB Global Tables
+
+Why both?
+- Multi-region for low latency worldwide
+- Auto Scaling for high throughput
+- Global databases replicate in < 1 second
+- Caching at multiple layers
+
+Cost: $10,000+ per month easily
+```
+
+## AWS Cost vs Performance Matrix
+
+| Configuration | Monthly Cost | Latency | Throughput | Use Case |
+|--------------|--------------|---------|------------|----------|
+| Single t3.micro + DynamoDB | $50 | 200-500ms | 100 req/sec | MVP/prototype |
+| CloudFront + Lambda + DAX | $500 | 50-100ms | 10,000 req/sec | Production app |
+| Multi-region + Auto Scaling | $5,000 | 20-50ms | 100,000 req/sec | High-scale app |
+| Global infrastructure + all optimizations | $50,000+ | < 20ms | 1M+ req/sec | Fortune 500 |
+
 ## Resources & References
 - Airplane analogy: Private jets (low latency, low throughput) vs. Big airplane (higher latency, high throughput)
 - Key principle: Most systems must choose based on their primary use case
 - Remember: Having both requires Google-level infrastructure investment
+- AWS Well-Architected Framework: Performance Efficiency Pillar

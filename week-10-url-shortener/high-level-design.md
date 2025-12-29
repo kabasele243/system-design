@@ -13,12 +13,24 @@
 ### Core Components:
 
 1. **Load Balancer:**
+   - Distributes incoming HTTP traffic across multiple web servers.
+   - Handles SSL termination and enforces security policies.
+   - Strategies: Round Robin, Least Connections.
 
 2. **Web/App Servers:**
+   - Stateless servers responsible for handling API requests (shorten, redirect).
+   - Validates input and interacts with the database and cache.
+   - Can be easily scaled horizontally by adding more instances.
 
 3. **Database:**
+   - Stores the persistent mapping between Short URLs and Long URLs.
+   - Stores user data and analytics logs.
+   - Requirements: High availability, eventual consistency (for analytics), strong consistency (for URL creation to avoid collisions).
 
-4. **Cache:**
+4. **Cache (Redis/Memcached):**
+   - Stores frequently accessed short-to-long URL mappings.
+   - Reduces load on the database and improves redirect latency.
+   - Eviction Policy: LRU (Least Recently Used) is appropriate as recent links are more likely to be clicked.
 
 ## API Design
 

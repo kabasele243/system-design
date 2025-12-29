@@ -64,6 +64,29 @@ Request 4 → Server 1 (start over)
 
 ---
 
+#### 1b. Weighted Round Robin
+**How it works:** Servers with more capacity get proportionally more requests
+
+```
+Server 1 (weight 3): 8 CPU cores
+Server 2 (weight 1): 2 CPU cores
+Server 3 (weight 2): 4 CPU cores
+
+Request distribution:
+→ Server 1, Server 1, Server 1
+→ Server 3, Server 3
+→ Server 2
+→ (repeat)
+```
+
+**Pros:**
+- Accounts for heterogeneous server capacity
+- Better resource utilization
+
+**Best for:** Mixed hardware environments, gradual rollouts (new servers get low weight initially)
+
+---
+
 #### 2. Least Connections
 **How it works:** Send to server with fewest active connections
 
@@ -80,7 +103,28 @@ Server 3: 150 connections
 **Cons:**
 - More complex tracking
 
-**Best for:** Long file downloads, video streaming
+**Best for:** Long file downloads, video streaming, WebSocket connections
+
+---
+
+#### 2b. Least Response Time
+**How it works:** Route to server with fastest recent response times
+
+```
+Server 1: avg 50ms response
+Server 2: avg 30ms response  ← Send here!
+Server 3: avg 80ms response
+```
+
+**Pros:**
+- Optimizes for user experience (fastest responses)
+- Accounts for both server load AND server performance
+
+**Cons:**
+- Requires tracking response time metrics
+- Can cause thundering herd to fast servers
+
+**Best for:** Latency-sensitive applications (real-time APIs, trading systems)
 
 ---
 
@@ -102,6 +146,30 @@ Hash(192.168.1.100) % 4 = Server 2
 - Server failure requires rehashing
 
 **Best for:** Legacy stateful applications
+
+---
+
+#### 3b. Consistent Hashing (Improved IP Hash)
+**How it works:** Servers placed on a hash ring; requests routed to nearest server clockwise
+
+```
+Hash Ring:
+    0 ----[Server 1]---- 90
+    |                    |
+  270                   180
+    [Server 3]    [Server 2]
+
+Hash(user_key) = 100 → Routes to Server 2 (nearest clockwise)
+```
+
+**Why better than simple IP Hash:**
+- When Server 2 fails → Only Server 2's traffic redistributes
+- Simple hash: ALL traffic redistributes (cache invalidation nightmare)
+- Adding servers only affects neighboring segment
+
+**Used by:** Memcached, Redis Cluster, Cassandra, DynamoDB
+
+**Best for:** Distributed caches, sharded databases
 
 ---
 
@@ -183,9 +251,10 @@ Load balancer sees:
 
 **Can route based on:**
 - URL path (`/api/*` → API servers)
-- HTTP method (POST → Write servers, GET → Read servers)
-- Headers (Mobile → Lightweight servers)
-- Cookies (Premium users → Premium servers)
+- Service path (`/users/*` → User Service, `/orders/*` → Order Service)
+- Headers (Mobile → Mobile-optimized servers, `Accept: application/grpc` → gRPC servers)
+- Cookies (Premium users → Premium tier servers)
+- Query parameters (A/B testing: `?variant=B` → Canary servers)
 
 **Characteristics:**
 - **Slower** (more processing)
@@ -266,11 +335,47 @@ If LB1 fails → LB2 handles 100%
 Load Balancer 1 (Active): 100% traffic
 Load Balancer 2 (Passive): Standby
 
-If LB1 fails → LB2 takes over (failover)
+Virtual IP (VIP): 157.240.23.35
+- LB1 owns VIP, handles traffic
+- LB2 monitors LB1 via heartbeat
+
+If LB1 fails:
+- Heartbeat timeout detected
+- LB2 takes over VIP (VRRP/keepalived)
+- Failover in ~1-3 seconds
 ```
 
-**Pros:** LB2 ready for full load
+**Pros:** LB2 ready for full load, fast automatic failover
 **Cons:** LB2 sits idle (wasted capacity)
+
+**Real-world:** Most cloud providers abstract this (AWS ELB manages HA automatically)
+
+---
+
+### Real-World Architecture: Multi-Tier Load Balancing
+
+**Production systems typically combine L4 and L7:**
+
+```
+[Users] → DNS
+           ↓
+    L4 Load Balancer (NLB)
+    - Handles millions of connections
+    - SSL passthrough or termination
+    - Routes to L7 tier
+           ↓
+    L7 Load Balancers (ALB/NGINX)
+    - Content-based routing
+    - Path: /api/* → API cluster
+    - Path: /static/* → CDN origin
+           ↓
+    Application Servers
+```
+
+**Why this pattern?**
+- L4 handles raw connection volume efficiently
+- L7 provides smart routing without L4 bottleneck
+- Each layer can scale independently
 
 ## Practice Questions
 
@@ -341,10 +446,20 @@ def get_next_server():
 - Multiple load balancers (Active-Active)
 
 ### Netflix Load Balancing
-- Multiple layers of load balancing
-- Geographic routing (users to nearest region)
-- L7 for path-based routing
-- Zuul (their custom load balancer) handles 100B+ requests/day
+- **Edge tier:** AWS ELB → Zuul (L7 gateway)
+- **Mid-tier:** Eureka (service discovery) + Ribbon (client-side LB)
+- Geographic routing via AWS Route 53 (latency-based DNS)
+- Zuul handles 100B+ requests/day with:
+  - Dynamic routing
+  - Canary testing
+  - Request authentication
+
+### Google Load Balancing
+- **Global Load Balancer:** Single anycast IP serves worldwide
+- **Maglev:** Custom L4 LB using consistent hashing
+  - Handles 10M+ requests/sec per machine
+  - Equal Cost Multi-Path (ECMP) routing
+- **Envoy:** L7 proxy for service mesh (Istio uses this)
 
 ## Resources & References
 - **Key insight:** Load balancer = traffic director for horizontal scaling

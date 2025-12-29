@@ -28,15 +28,15 @@ Design a URL shortener service like TinyURL or bit.ly
 
 **Write QPS:**
 ```
-100M URLs/month ÷ (30 days × 24 hours × 3600 seconds) =
-Peak write QPS (2x) =
+100M URLs/month ÷ (30 days × 24 hours × 3600 seconds) = ~40 write requests/second
+Peak write QPS (2x) = ~80 write requests/second
 ```
 
 **Read QPS:**
 ```
 Read ratio is 10:1, so:
-Average read QPS =
-Peak read QPS =
+Average read QPS = ~400 read requests/second
+Peak read QPS = ~800 read requests/second
 ```
 
 **Storage:**
@@ -54,8 +54,8 @@ For 100M URLs/month over 5 years:
 
 **Bandwidth:**
 ```
-Write: QPS × 1KB =
-Read: QPS × 1KB =
+Write: 40 QPS × 1KB = 40 KB/s
+Read: 400 QPS × 1KB = 400 KB/s
 ```
 
 ## Next Steps
